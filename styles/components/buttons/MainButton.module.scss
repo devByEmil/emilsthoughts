@@ -1,0 +1,13 @@
+.container {
+    background-color: var(--color-primary);
+    padding: 1rem 7.5rem;
+    border-radius: 2.5rem;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    box-shadow: 0.25rem 0.25rem rgba(black, 0.3);
+}
+.title {
+    color: white;
+    font-size: 2rem;
+}
