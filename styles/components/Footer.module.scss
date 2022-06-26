@@ -1,0 +1,31 @@
+.footer {
+    padding: 2.25rem 3rem 1rem 3rem;
+    background-color: var(--bg-dark);
+    border-radius: 2rem 2rem 0 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+
+    &__image {
+        height: 13rem;
+        position: relative;
+    }
+    &__nav {
+        font-size: 1.75rem;
+
+        &__link {
+            color: var(--color-primary);
+
+            &:not(:last-child) {
+                margin-right: 2.5rem;
+            }
+        }
+    }
+    &__copyright {
+        font-size: 1.25rem;
+        grid-column: 1/4;
+    }
+    &__button {
+        justify-self: center;
+    }
+}

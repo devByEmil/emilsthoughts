@@ -16,9 +16,9 @@ const SectionCover = (props) => {
                     }
                 `}
             </style>
-            <div className={coverStyles.container + " background"}>
+            <header className={coverStyles.container + " background"}>
                 {props.children}
-            </div>
+            </header>
         </>
     );
 };

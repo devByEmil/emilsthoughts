@@ -6,6 +6,7 @@ import SectionCover from "../components/SectionCover";
 import MainButton from "../components/buttons/MainButton";
 import Heading1 from "../components/typography/Heading1";
 import TopicNav from "../components/TopicNav";
+import Footer from "../components/Footer";
 
 import bannerVertical from "../public/Banner Big Vertical.png";
 import images from "../data/images";
@@ -46,6 +47,9 @@ const Home = () => {
             <section className={styles.topics}>
                 <Heading1 title="Topics" />
                 <TopicNav className={styles.topicNavContainer} />
+            </section>
+            <section className={styles.footer}>
+                <Footer />
             </section>
         </>
     );
