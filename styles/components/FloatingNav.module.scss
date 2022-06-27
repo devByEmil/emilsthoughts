@@ -1,0 +1,130 @@
+.nav {
+    --nav-height: 4.25rem;
+    --nav-width: 4.25rem;
+    --nav-top: 1.5rem;
+    --nav-right: 1.5rem;
+
+    position: fixed;
+    z-index: 10;
+
+    &__checkbox {
+        display: none;
+
+        // show background
+        &:checked ~ .nav__background {
+            transform: scale(125);
+        }
+        // show navigation and logo
+        &:checked ~ .nav__navigation {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        // label icon open/close transition NOT WORKING
+        &:checked ~ .nav__label > .nav__label__span {
+            background-color: transparent;
+
+            &::after {
+                transform: rotate(135deg);
+                height: 0.25rem;
+                top: 0;
+            }
+            &::before {
+                transform: rotate(-135deg);
+                height: 0.25rem;
+                top: 0;
+            }
+        }
+    }
+    &__label {
+        z-index: 15;
+        position: fixed;
+        top: var(--nav-top);
+        right: var(--nav-right);
+        height: var(--nav-height);
+        width: var(--nav-width);
+        background-color: var(--color-primary);
+        border-radius: 10rem;
+        box-shadow: 0.3rem 0.3rem 0.4rem rgba(black, 0.4);
+        display: grid;
+        align-content: center;
+        justify-content: center;
+
+        &:hover {
+            cursor: pointer;
+        }
+        // label icon
+        &__span {
+            width: 2.25rem;
+            height: 0.2rem;
+            background-color: white;
+            border-radius: 1rem;
+            position: relative;
+            transition: all 0.3s ease-in-out;
+
+            &::after,
+            &::before {
+                content: "";
+                display: block;
+                width: 2.25rem;
+                height: 0.2rem;
+                background-color: white;
+                border-radius: 1rem;
+                position: absolute;
+                transition: all 0.3s ease-in-out;
+            }
+            &::after {
+                top: -0.6rem;
+            }
+            &::before {
+                top: 0.6rem;
+            }
+        }
+    }
+    &__background {
+        border-radius: 10rem;
+        background-image: linear-gradient(
+                to right,
+                rgba(black, 0.25),
+                rgba(black, 0.25)
+            ),
+            linear-gradient(
+                to top right,
+                var(--color-primary) 40%,
+                var(--color-accent)
+            );
+        height: var(--nav-height);
+        width: var(--nav-width);
+        position: fixed;
+        top: var(--nav-top);
+        right: var(--nav-right);
+        z-index: 13;
+        transition: all 0.4s ease-in-out;
+    }
+
+    // NAVIGATION CONTENT
+    &__navigation {
+        position: fixed;
+        z-index: 14;
+        height: 100vh;
+        width: 100vw;
+        opacity: 0;
+        transform: translateX(-100vw);
+        transition: all 0.4s cubic-bezier(0.41, -0.48, 0.5, 1.48);
+
+        &__logo {
+            position: relative;
+            height: 17.5rem;
+        }
+        &__topicnav {
+            margin-top: 2.5rem;
+            padding: 0 7.5rem;
+            max-height: 55vh;
+            max-width: 150rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}

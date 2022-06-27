@@ -7,6 +7,7 @@ import MainButton from "../components/buttons/MainButton";
 import Heading1 from "../components/typography/Heading1";
 import TopicNav from "../components/TopicNav";
 import Footer from "../components/Footer";
+import FloatingNav from "../components/FloatingNav";
 
 import bannerVertical from "../public/Banner Big Vertical.png";
 import images from "../data/images";
@@ -16,6 +17,7 @@ import images from "../data/images";
 const Home = () => {
     return (
         <>
+            <FloatingNav />
             <Meta />
             <section>
                 <SectionCover imagesrc={images.covers.home}>
