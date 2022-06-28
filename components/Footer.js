@@ -10,27 +10,31 @@ const Footer = (props) => {
     return (
         <footer className={styles.footer}>
             <div className={styles.footer__image}>
-                <Image
-                    src={images.bannerBigH}
-                    alt="emilsthoughts Logo"
-                    layout="fill"
-                    objectFit="contain"
-                />
+                <Link href="/">
+                    <a>
+                        <Image
+                            src={images.bannerBigH}
+                            alt="emilsthoughts Logo"
+                            layout="fill"
+                            objectFit="contain"
+                        />
+                    </a>
+                </Link>
             </div>
             <nav className={styles.footer__nav}>
-                <Link href="#">
+                <Link href="/about">
                     <a className={styles.footer__nav__link}>About</a>
                 </Link>
-                <Link href="#">
+                <Link href="/contact">
                     <a className={styles.footer__nav__link}>Contact</a>
                 </Link>
-                <Link href="#">
+                <Link href="/legal">
                     <a className={styles.footer__nav__link}>Legal</a>
                 </Link>
             </nav>
             <MainButton
                 title="Support Me!"
-                href="#"
+                href="/supportme"
                 className={styles.footer__button}
             />
             <p className={styles.footer__copyright}>&copy; Emil Rädsch 2022</p>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import styles from "../styles/components/FloatingNav.module.scss";
 import TopicNav from "./TopicNav";
@@ -19,12 +20,16 @@ const FloatingNav = (props) => {
             <div className={styles.nav__background}></div>
             <nav className={styles.nav__navigation}>
                 <div className={styles.nav__navigation__logo}>
-                    <Image
-                        src={images.bannerBigH}
-                        alt="emilsthoughts logo"
-                        layout="fill"
-                        objectFit="contain"
-                    />
+                    <Link href="/">
+                        <a>
+                            <Image
+                                src={images.bannerBigH}
+                                alt="emilsthoughts logo"
+                                layout="fill"
+                                objectFit="contain"
+                            />
+                        </a>
+                    </Link>
                 </div>
                 <TopicNav className={styles.nav__navigation__topicnav} />
             </nav>

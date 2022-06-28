@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import styles from "../styles/pages/Home.module.scss";
+import styles from "../styles/pages/home.module.scss";
 import Meta from "../components/Meta";
 import SectionCover from "../components/SectionCover";
 import MainButton from "../components/buttons/MainButton";
@@ -39,7 +39,7 @@ const Home = () => {
                             and interests.
                         </p>
                         <MainButton
-                            href="#"
+                            href="/about"
                             title="About"
                             className={styles.headerButton}
                         />
