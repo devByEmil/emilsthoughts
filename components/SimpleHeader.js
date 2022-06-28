@@ -3,24 +3,21 @@ import Image from "next/image";
 import Link from "next/link";
 
 import styles from "../styles/components/SimpleHeader.module.scss";
+import MyImage from "./my/MyImage";
 
 import images from "../data/images";
 
 const SimpleHeader = (props) => {
     return (
         <header className={styles.header}>
-            <div className={styles.header__image}>
-                <Link href="/">
-                    <a>
-                        <Image
-                            src={images.bannerBigV}
-                            alt="emilsthoughts Logo"
-                            layout="fill"
-                            objectFit="contain"
-                        />
-                    </a>
-                </Link>
-            </div>
+            <MyImage
+                src={images.bannerBigV}
+                height="1000"
+                width="2000"
+                alt="emilsthoughts Logo"
+                maxwidth="40rem"
+                link="/"
+            />
         </header>
     );
 };

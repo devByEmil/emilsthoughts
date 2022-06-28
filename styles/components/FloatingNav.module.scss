@@ -111,11 +111,7 @@
         opacity: 0;
         transform: translateX(-100vw);
         transition: all 0.4s cubic-bezier(0.41, -0.48, 0.5, 1.48);
-
-        &__logo {
-            position: relative;
-            height: 17.5rem;
-        }
+        
         &__topicnav {
             margin-top: 2.5rem;
             padding: 0 7.5rem;
