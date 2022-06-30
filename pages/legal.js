@@ -12,21 +12,26 @@ import legalData from "../data/legalData";
 // subcomponent
 const LegalItem = (props) => {
     return (
-        <>
+        <div className={styles.legal__item}>
             <Heading3 title={props.title} color={"var(--color-primary)"} />
             {props.content.map((item) => (
-                <p className={styles.legal__content}>{item}</p>
+                <p>{item}</p>
             ))}
             {props.links
-                ? props.links.map((item) => (
-                      <Link href={item.href} className={styles.legal__link}>
-                          <a>
-                              <p>{item.title}</p>
+                ? props.links.map((item, index) => (
+                      <>
+                          <a
+                              className={styles.legal__item__link}
+                              target="_blank"
+                              href={item.href}
+                          >
+                              {item.title}
                           </a>
-                      </Link>
+                          {index != props.links.length - 1 ? <br /> : ""}
+                      </>
                   ))
                 : ""}
-        </>
+        </div>
     );
 };
 

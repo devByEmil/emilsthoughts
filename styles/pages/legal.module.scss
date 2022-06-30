@@ -1,9 +1,19 @@
 .legal {
-    margin-top: 10rem;
+    margin-top: 5rem;
     margin-bottom: 15rem;
 
-    &__content {
-    }
-    &__link {
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 2.5rem;
+        }
+
+        &__link {
+            color: black;
+            font-size: 1.6rem;
+
+            &:hover {
+                color: var(--color-primary);
+            }
+        }
     }
 }

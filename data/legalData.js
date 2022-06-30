@@ -15,7 +15,7 @@ const legalData = [
         content: ["Privacy Policy"],
         links: [
             {
-                title: "Eu Dispute Settlement",
+                title: "EU Dispute Settlement",
                 href: "https://policy.trade.ec.europa.eu/enforcement-and-protection/dispute-settlement_en",
             },
         ],
