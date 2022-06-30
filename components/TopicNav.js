@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import styles from "../styles/components/TopicNav.module.scss";
+import Heading3 from "./typography/Heading3";
 
 import images from "../data/images";
 
@@ -44,17 +45,17 @@ const TopicNav = (props) => {
             `}</style>
             <Link href="#">
                 <a className={styles.topic}>
-                    <p className={styles.topicTitle}>Australia</p>
+                    <Heading3 title="Australia" color="white" />
                 </a>
             </Link>
             <Link href="#">
                 <a className={styles.topic}>
-                    <p className={styles.topicTitle}>Philosophy</p>
+                    <Heading3 title="Philosophy" color="white" />
                 </a>
             </Link>
             <Link href="#">
                 <a className={styles.topic}>
-                    <p className={styles.topicTitle}>Photography</p>
+                    <Heading3 title="Photography" color="white" />
                 </a>
             </Link>
         </nav>
