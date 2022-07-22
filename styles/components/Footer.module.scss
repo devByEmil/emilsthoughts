@@ -14,8 +14,6 @@
         font-size: 1.75rem;
 
         &__link {
-            color: var(--color-primary);
-
             &:not(:last-child) {
                 margin-right: 2.5rem;
             }

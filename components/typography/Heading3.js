@@ -2,7 +2,8 @@ import styles from "../../styles/components/typography/Heading3.module.scss";
 
 /* PROPS
 - title: heading title
-- color: title color
+? accent: sets color to accent, default is primary
+? color: title color
 ? className: h3 styling
 */
 
@@ -12,7 +13,10 @@ const Heading3 = (props) => {
             <style jsx>
                 {`
                     h3 {
-                        color: ${props.color};
+                        ${props.accent
+                            ? "color: var(--color-accent);"
+                            : "color: var(--color-primary);"}
+                        ${props.color ? `color: ${props.color}` : ""}
                     }
                 `}
             </style>

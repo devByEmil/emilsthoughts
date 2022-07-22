@@ -1,0 +1,37 @@
+.wrapper {
+    background-color: white;
+    height: 55rem;
+    border-radius: 2rem;
+    box-shadow: 0.4rem 0.4rem 0.6rem rgba(black, 0.4);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    max-width: 130rem;
+    margin: 0 auto;
+}
+
+//left side
+.info {
+    width: 30%;
+    height: 100%;
+    background-image: linear-gradient(
+        to top right,
+        var(--color-primary),
+        var(--color-accent)
+    );
+    border-radius: 2rem;
+    padding: 5rem;
+
+    &__heading {
+        text-align: center;
+
+        &__subheading {
+            margin-top: -1.5rem;
+        }
+    }
+}
+
+//right side
+.formbox {
+    width: 70%;
+}

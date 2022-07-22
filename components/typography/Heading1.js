@@ -2,7 +2,8 @@ import styles from "../../styles/components/typography/Heading1.module.scss";
 
 /* PROPS
 - title: heading title
-- accent: if true color is accent, default is primary
+? accent: if true color is accent, default is primary
+? color: h1 color
 */
 
 const Heading1 = (props) => {
@@ -14,6 +15,7 @@ const Heading1 = (props) => {
                         ${props.accent
                             ? "color: var(--color-accent);"
                             : "color: var(--color-primary);"}
+                        ${props.color ? `color: ${props.color}` : ""}
                     }
                 `}
             </style>

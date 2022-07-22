@@ -6,14 +6,5 @@
         &:not(:last-child) {
             margin-bottom: 2.5rem;
         }
-
-        &__link {
-            color: black;
-            font-size: 1.6rem;
-
-            &:hover {
-                color: var(--color-primary);
-            }
-        }
     }
 }

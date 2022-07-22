@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-import styles from "../styles/pages/home.module.scss";
 import Meta from "../components/Meta";
 import SectionCover from "../components/SectionCover";
 import MainButton from "../components/buttons/MainButton";
@@ -9,10 +8,11 @@ import TopicNav from "../components/TopicNav";
 import Footer from "../components/Footer";
 import FloatingNav from "../components/FloatingNav";
 
+import styles from "../styles/pages/home.module.scss";
 import bannerVertical from "../public/Banner Big Vertical.png";
 import images from "../data/images";
 
-// Import: (1) Stuff made by others (2) My CSS, My Components (3) Everything else made by me
+// Import: (1) Stuff made by others (2) Components (3) styles, data, etc
 
 const Home = () => {
     return (
