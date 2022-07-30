@@ -5,6 +5,7 @@ import imageCoversPhotography from "../public/covers/pexels-aron-visuals-1686451
 import imageBannerBigH from "../public/Banner Big Horizontal.png";
 import imageBannerBigV from "../public/Banner Big Vertical.png";
 import imageLogo from "../public/Logo.png";
+import contactBg from "../public/contact_component.jpg";
 
 // in here are paths to images
 const images = {
@@ -17,6 +18,7 @@ const images = {
     bannerBigH: imageBannerBigH.src,
     bannerBigV: imageBannerBigV.src,
     logo: imageLogo.src,
+    contactbg: contactBg.src,
 };
 
 export default images;

@@ -21,6 +21,9 @@
     );
     border-radius: 2rem;
     padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     &__heading {
         text-align: center;
@@ -29,9 +32,76 @@
             margin-top: -1.5rem;
         }
     }
+    &__formsubmit {
+        display: block;
+        background-color: var(--color-accent);
+        padding: 1rem 7.5rem;
+        border-radius: 2.5rem;
+        box-shadow: 0.2rem 0.2rem 0.4rem rgba(black, 0.3);
+        font-size: 2rem;
+        color: white;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }
 
 //right side
 .formbox {
     width: 70%;
+    height: 100%;
+    padding: 3rem 0;
+    display: grid;
+    grid-template-rows: 1fr 1fr 4fr;
+
+    & > div {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        & > input, select {
+            width: 40%;
+        }
+    }
+
+    &__input {
+        border: none;
+        border-radius: .5rem;
+        box-shadow: 0.2rem 0.2rem 0.4rem rgba(black, .2);
+        padding: .5rem;
+        width: 100%;
+        font-size: 1.6rem;
+
+        &:focus {
+            outline: none;
+        }
+    }
+    &__textarea {
+        font-size: 1.6rem;
+        border: none;
+        border-radius: .5rem;
+        padding: .5rem;
+        resize: none;
+        height: 80%;
+        width: 85%;
+        border-radius: .5rem;
+        box-shadow: 0.2rem 0.2rem 0.4rem rgba(black, .2);
+        // overflow: hidden; => removes scroll bar (ungewollt)
+
+        &:focus {
+            outline: none;
+        }
+    }
+    &__dropdown {
+        font-size: 1.6rem;
+        border: none;
+        background-color: white;
+        border-radius: .5rem;
+        box-shadow: 0.2rem 0.2rem 0.4rem rgba(black, .2);
+        padding: .5rem .2rem
+    }
+    &__hiddensubmit {
+        display: none;
+    }
 }
