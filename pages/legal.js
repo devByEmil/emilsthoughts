@@ -1,12 +1,9 @@
 import Link from "next/link";
-
-import styles from "../styles/pages/legal.module.scss";
-import FloatingNav from "../components/FloatingNav";
 import Meta from "../components/Meta";
-import Footer from "../components/Footer";
 import SimpleHeader from "../components/SimpleHeader";
 import Heading3 from "../components/typography/Heading3";
 
+import styles from "../styles/pages/legal.module.scss";
 import legalData from "../data/legalData";
 
 // subcomponent
@@ -39,7 +36,6 @@ const Legal = (props) => {
     return (
         <>
             <Meta title="Legal Information" />
-            <FloatingNav />
             <SimpleHeader />
             <main className={styles.legal}>
                 {legalData.map((item) => (
@@ -50,7 +46,6 @@ const Legal = (props) => {
                     />
                 ))}
             </main>
-            <Footer />
         </>
     );
 };

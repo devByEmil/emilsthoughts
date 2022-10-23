@@ -43,7 +43,7 @@ const TopicNav = (props) => {
                         url(${images.covers.photography});
                 }
             `}</style>
-            <Link href="#">
+            <Link href="/australia">
                 <a className={styles.topic}>
                     <Heading3 title="Australia" color="white" />
                 </a>

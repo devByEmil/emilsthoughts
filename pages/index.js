@@ -1,24 +1,18 @@
 import Image from "next/image";
-
-import Meta from "../components/Meta";
 import SectionCover from "../components/SectionCover";
 import MainButton from "../components/buttons/MainButton";
 import Heading1 from "../components/typography/Heading1";
 import TopicNav from "../components/TopicNav";
-import Footer from "../components/Footer";
-import FloatingNav from "../components/FloatingNav";
 
 import styles from "../styles/pages/home.module.scss";
 import bannerVertical from "../public/Banner Big Vertical.png";
 import images from "../data/images";
 
-// Import: (1) Stuff made by others (2) Components (3) styles, data, etc
+// Import: (1) Components (2) styles, data, etc
 
 const Home = () => {
     return (
         <>
-            <FloatingNav />
-            <Meta />
             <section>
                 <SectionCover imagesrc={images.covers.home}>
                     <div className={styles.headerLogo}>
@@ -32,8 +26,8 @@ const Home = () => {
                     <div className={styles.headerText}>
                         <p className={styles.headerText__hi}>Hi!</p>
                         <p className={styles.headerText__text}>
-                            I am Emil, an 18 year old boy from Germany,
-                            currently in Australia.
+                            I am Emil, a 19 year old boy from Germany, currently
+                            in Australia.
                             <br />
                             On this blog, I write about my thoughts, experiences
                             and interests.
@@ -49,9 +43,6 @@ const Home = () => {
             <section className={styles.topics}>
                 <Heading1 title="Topics" />
                 <TopicNav className={styles.topicNavContainer} />
-            </section>
-            <section className={styles.footer}>
-                <Footer />
             </section>
         </>
     );
