@@ -1,0 +1,13 @@
+.posts{
+    display: grid;
+    justify-items: center;
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(30rem, 1fr));
+        margin: 5rem 1rem;
+        gap: 5rem;
+        max-width: 125rem;
+        width: 100%;
+    }
+}
