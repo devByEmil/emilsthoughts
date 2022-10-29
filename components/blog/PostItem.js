@@ -11,7 +11,6 @@ import Link from "next/link";
 import styles from "../../styles/components/blog/PostItem.module.scss";
 
 const PostItem = ({ post }) => {
-    console.log(post);
     return (
         <>
             <style jsx>{`
