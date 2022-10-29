@@ -1,4 +1,6 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { BLOCKS, INLINES } from "@contentful/rich-text-types";
+import Link from "next/link";
 
 import styles from "../../styles/pages/australia/australiaPost.module.scss";
 import images from "../../data/images";
@@ -64,6 +66,31 @@ export const getStaticProps = async (context) => {
 const AustraliaPostPage = ({ data, post }) => {
     console.log(data);
     console.log(post);
+
+    const RICH_TEXT_OPTIONS = {
+        renderNode: {
+            [BLOCKS.HR]: () => <hr className={styles.richtext__hr} />,
+            [BLOCKS.HEADING_4]: (_, children) => (
+                <h4 className={styles.richtext__h4}>{children}</h4>
+            ),
+            [BLOCKS.HEADING_5]: (_, children) => (
+                <h5 className={styles.richtext__h5}>{children}</h5>
+            ),
+            [BLOCKS.HEADING_6]: (_, children) => (
+                <h6 className={styles.richtext__h6}>{children}</h6>
+            ),
+            [INLINES.HYPERLINK]: (node, children) => (
+                <Link href={node.data.uri}>
+                    <a target="_blank">{children}</a>
+                </Link>
+            ),
+            [BLOCKS.EMBEDDED_ASSET]: (node) => {
+                console.log(node);
+                return <></>;
+            },
+        },
+    };
+
     return (
         <>
             <style jsx>{`
@@ -81,7 +108,7 @@ const AustraliaPostPage = ({ data, post }) => {
                 <p className={styles.header__publishDate}>{post.publishDate}</p>
             </header>
             <main className={styles.main}>
-                {documentToReactComponents(post.content)}
+                {documentToReactComponents(post.content, RICH_TEXT_OPTIONS)}
             </main>
         </>
     );

@@ -20,3 +20,25 @@
         right: 1.5rem;
     }
 }
+
+.main {
+    margin: 7.5rem auto;
+    width: 60%;
+    text-align: left;
+    border: 1px solid black;
+}
+
+.richtext {
+    &__hr {
+        width: 70%;
+    }
+    &__h4 {
+        font-size: 3.2rem;
+    }
+    &__h5 {
+        font-size: 2.4rem;
+    }
+    &__h6 {
+        font-size: 2rem;
+    }
+}
