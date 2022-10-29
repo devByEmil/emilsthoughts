@@ -1,6 +1,7 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import Link from "next/link";
+import MyImage from "../../components/my/MyImage";
 
 import styles from "../../styles/pages/australia/australiaPost.module.scss";
 import { getPostBySlug, getPostsByTag } from "../../functions/cms";
@@ -45,6 +46,20 @@ const AustraliaPostPage = ({ post }) => {
                     <a target="_blank">{children}</a>
                 </Link>
             ),
+            [BLOCKS.EMBEDDED_ASSET]: (node) => {
+                const data = node.data.target.fields;
+                return (
+                    <div className={styles.richtext__imagewrapper}>
+                        <MyImage
+                            src={"https:" + data.file.url}
+                            height={data.file.details.image.height}
+                            width={data.file.details.image.width}
+                            maxwidth="100%"
+                            alt={data.title}
+                        />
+                    </div>
+                );
+            },
         },
     };
 
