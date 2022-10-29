@@ -36,7 +36,11 @@ export const getStaticProps = async (context) => {
         id: item.sys.id,
         slug: item.fields.slug,
         title: item.fields.title,
-        publishDate: item.fields.publishDate,
+        publishDate: item.fields.publishDate
+            .split("-")
+            .reverse()
+            .toString()
+            .replaceAll(",", "/"),
         cover: {
             title: "",
             url: "",
@@ -62,12 +66,22 @@ const AustraliaPostPage = ({ data, post }) => {
     console.log(post);
     return (
         <>
-            <main>
-                <p>{post.title}</p>
-                <p>{post.slug}</p>
-                <p>{post.id}</p>
+            <style jsx>{`
+                .header {
+                    background-image: linear-gradient(
+                            to right,
+                            rgba(0, 0, 0, 0.35),
+                            rgba(0, 0, 0, 0.35)
+                        ),
+                        url("${post.cover.url}");
+                }
+            `}</style>
+            <header className={styles.header + " header"}>
+                <p className={styles.header__title}>{post.title}</p>
+                <p className={styles.header__publishDate}>{post.publishDate}</p>
+            </header>
+            <main className={styles.main}>
                 {documentToReactComponents(post.content)}
-                <img src={post.cover.url} />
             </main>
         </>
     );

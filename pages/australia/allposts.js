@@ -1,4 +1,5 @@
 import PostItem from "../../components/blog/PostItem";
+import SimpleBlogHeader from "../../components/blog/SimpleBlogHeader";
 
 import styles from "../../styles/pages/australia/australiaAllPosts.module.scss";
 
@@ -45,11 +46,10 @@ export const getStaticProps = async () => {
     };
 };
 
-const AllPostsListing = ({ posts, data }) => {
-    console.log(data);
+const AllPostsListing = ({ posts }) => {
     return (
         <>
-            <h1>All Posts</h1>
+            <SimpleBlogHeader title="Australia: All Posts" link="/australia" />
             <section className={styles.posts}>
                 <div className={styles.posts__wrapper}>
                     {posts.map((post) => (

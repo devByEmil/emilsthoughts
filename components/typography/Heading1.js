@@ -4,6 +4,7 @@ import styles from "../../styles/components/typography/Heading1.module.scss";
 - title: heading title
 ? accent: if true color is accent, default is primary
 ? color: h1 color
+? className: h1 style
 */
 
 const Heading1 = (props) => {
@@ -19,7 +20,14 @@ const Heading1 = (props) => {
                     }
                 `}
             </style>
-            <h1 className={styles.heading}>{props.title}</h1>
+            <h1
+                className={
+                    styles.heading +
+                    ` ${props.className ? props.className : ""}`
+                }
+            >
+                {props.title}
+            </h1>
         </>
     );
 };
