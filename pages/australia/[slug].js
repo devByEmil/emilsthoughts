@@ -3,68 +3,29 @@ import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import Link from "next/link";
 
 import styles from "../../styles/pages/australia/australiaPost.module.scss";
-import images from "../../data/images";
+import { getPostBySlug, getPostsByTag } from "../../functions/cms";
 
 export const getStaticPaths = async () => {
-    const SPACE_ID = process.env.SPACE_ID;
-    const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
     const ALLOWED_TAGS = ["australia"];
+    const { posts } = await getPostsByTag(ALLOWED_TAGS);
 
-    const res = await fetch(
-        `https://cdn.contentful.com/spaces/${SPACE_ID}/entries?access_token=${ACCESS_TOKEN}&metadata.tags.sys.id[in]=${ALLOWED_TAGS}`
-    );
-    const data = await res.json();
-
-    const paths = data.items.map((item) => ({
-        params: { slug: item.fields.slug },
+    const paths = posts.map((item) => ({
+        params: { slug: item.slug },
     }));
 
     return { paths, fallback: false };
 };
 
 export const getStaticProps = async (context) => {
-    const SPACE_ID = process.env.SPACE_ID;
-    const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
     const ENTRY_SLUG = context.params.slug;
-    const ENTRY_CONTENT_TYPE = "post";
-
-    const res = await fetch(
-        `https://cdn.contentful.com/spaces/${SPACE_ID}/entries?access_token=${ACCESS_TOKEN}&content_type=${ENTRY_CONTENT_TYPE}&fields.slug=${ENTRY_SLUG}`
-    );
-    const data = await res.json();
-    const item = data.items[0];
-
-    let post = {
-        id: item.sys.id,
-        slug: item.fields.slug,
-        title: item.fields.title,
-        publishDate: item.fields.publishDate
-            .split("-")
-            .reverse()
-            .toString()
-            .replaceAll(",", "/"),
-        cover: {
-            title: "",
-            url: "",
-            details: {},
-        },
-        content: item.fields.content,
-    };
-    data.includes.Asset.forEach((asset) => {
-        if (asset.sys.id == item.fields.cover.sys.id) {
-            post.cover.title = asset.fields.title;
-            post.cover.url = asset.fields.file.url;
-            post.cover.details = asset.fields.file.details.image;
-        }
-    });
+    const { post } = await getPostBySlug(ENTRY_SLUG);
 
     return {
-        props: { data, post },
+        props: { post },
     };
 };
 
-const AustraliaPostPage = ({ data, post }) => {
-    console.log(data);
+const AustraliaPostPage = ({ post }) => {
     console.log(post);
 
     const RICH_TEXT_OPTIONS = {
@@ -84,10 +45,6 @@ const AustraliaPostPage = ({ data, post }) => {
                     <a target="_blank">{children}</a>
                 </Link>
             ),
-            [BLOCKS.EMBEDDED_ASSET]: (node) => {
-                console.log(node);
-                return <></>;
-            },
         },
     };
 
