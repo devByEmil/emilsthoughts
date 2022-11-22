@@ -1,0 +1,31 @@
+.item {
+    height: 65rem;
+    min-width: 60rem;
+    max-width: 60rem;
+    border-radius: 1.5rem;
+    box-shadow: .4rem .4rem .4rem rgba(0, 0, 0, .4);
+    margin: .75rem 0;
+
+    &:not(:last-child) {
+        margin-right: 3rem;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+
+    &__box {
+        margin: 20rem 2rem;
+        color: white;
+
+        &__title {
+            font-size: 4.5rem;
+            font-weight: 100;
+            letter-spacing: .3rem;
+            font-family: var(--font-special);
+        }
+        &__description {
+            font-size: 1.6rem;
+            font-weight: 100;
+        }
+    }
+}

@@ -25,6 +25,21 @@ const buildPost = (item) => {
     };
 };
 
+const buildCollection = (item) => {
+    return {
+        id: item.sys.id,
+        title: item.fields.title,
+        slug: item.fields.slug,
+        description: item.fields.description,
+        cover: {
+            title: item.fields.cover.fields.title,
+            url: item.fields.cover.fields.file.url,
+            details: item.fields.cover.fields.file.details.image,
+        },
+        posts: item.fields.posts.map((item) => buildPost(item)),
+    };
+};
+
 export const getPostBySlug = async (entry_slug) => {
     const data = await client.getEntries({
         content_type: "post",
@@ -90,4 +105,14 @@ export const getPostsByTag = async (allowed_tags, descending = true) => {
     });
 
     return { posts };
+};
+
+export const getCollectionsByTag = async (allowed_tags) => {
+    const data = await client.getEntries({
+        content_type: "collection",
+        "metadata.tags.sys.id[in]": allowed_tags.join(),
+    });
+    const collections = data.items.map((item) => buildCollection(item));
+
+    return { collections, data };
 };

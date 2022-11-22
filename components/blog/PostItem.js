@@ -26,7 +26,7 @@ const PostItem = ({ post }) => {
                     background-position: center;
                 }
             `}</style>
-            <Link href={`/australia/${post.slug}`}>
+            <Link href={`/australia/posts/${post.slug}`}>
                 <a>
                     <div className={`${styles.wrapper} wrapper`}>
                         <p className={styles.wrapper__publishDate}>

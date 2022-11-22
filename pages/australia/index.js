@@ -11,12 +11,12 @@ const AustraliaHome = ({ posts, data }) => {
     return (
         <>
             <SectionCover imagesrc={images.covers.australia}>
-                <Link href="australia/allposts">
+                <Link href="australia/posts">
                     <a>
                         <p>All Posts</p>
                     </a>
                 </Link>
-                <Link href="australia/allcollections">
+                <Link href="australia/collections">
                     <a>
                         <p>All Collections</p>
                     </a>

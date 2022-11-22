@@ -1,10 +1,10 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import Link from "next/link";
-import MyImage from "../../components/my/MyImage";
+import MyImage from "../../../components/my/MyImage";
 
-import styles from "../../styles/pages/australia/australiaPost.module.scss";
-import { getPostBySlug, getPostsByTag } from "../../functions/cms";
+import styles from "../../../styles/pages/australia/australiaPost.module.scss";
+import { getPostBySlug, getPostsByTag } from "../../../functions/cms";
 
 export const getStaticPaths = async () => {
     const ALLOWED_TAGS = ["australia"];
