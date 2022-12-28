@@ -1,0 +1,32 @@
+.logobox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15rem;
+
+    &__title {
+        font-family: var(--font-special);
+        font-weight: 100;
+        font-size: 10rem;
+        color: var(--color-primary);
+        margin-left: 5rem;
+    }
+}
+
+.description {
+    margin-bottom: 2rem;
+    font-size: 1.7rem;
+    color: white;
+}
+
+.buttonbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    & > :not(:last-child) {
+        margin-right: 10rem;
+    }
+}
