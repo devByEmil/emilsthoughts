@@ -52,6 +52,18 @@ export const getPostBySlug = async (entry_slug) => {
     return { post };
 };
 
+export const getCollectionBySlug = async (slug) => {
+    const data = await client.getEntries({
+        content_type: "collection",
+        "fields.slug": slug,
+    });
+    const item = data.items[0];
+    const collection = buildCollection(item);
+
+    // return { collection, data } // DEV
+    return { collection };
+};
+
 export const getPostsByTag = async (allowed_tags, descending = true) => {
     // sort order: -1 = ascending, 1 = descending
     let sort_order;

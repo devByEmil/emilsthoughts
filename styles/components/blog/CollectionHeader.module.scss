@@ -1,0 +1,26 @@
+.header {
+    height: 50rem;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 7.5rem;
+
+    &__box {
+        display: grid;
+        justify-items: center;
+
+        &__title {
+            font-family: var(--font-special);
+            font-size: 7.5rem;
+            color: var(--color-primary);
+            font-weight: 100;
+            margin-bottom: 4rem;
+        }
+        &__description {
+            font-size: 1.7rem;
+            font-weight: 100;
+            max-width: 50%;
+            color: white;
+        }
+    }
+}

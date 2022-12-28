@@ -6,7 +6,6 @@ import { getCollectionsByTag } from "../../../functions/cms";
 export const getStaticProps = async () => {
     const ALLOWED_TAGS = ["australia"];
     const { data, collections } = await getCollectionsByTag(ALLOWED_TAGS);
-    console.log(data);
 
     return { props: { collections, data } };
 };
