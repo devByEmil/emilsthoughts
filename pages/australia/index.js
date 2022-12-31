@@ -2,12 +2,20 @@ import SectionCover from "../../components/SectionCover";
 import MyImage from "../../components/my/MyImage";
 import MainButton from "../../components/buttons/MainButton";
 import Heading1 from "../../components/typography/Heading1";
+import Favourites from "../../components/blog/Favourites";
 
 import styles from "../../styles/pages/australia/australiaHome.module.scss";
 import images from "../../data/images";
 import text from "../../data/text";
+import { getFavouritesByTag } from "../../functions/cms";
 
-const AustraliaHome = ({ posts, data }) => {
+export const getStaticProps = async () => {
+    const { favourites, data } = await getFavouritesByTag("australia");
+    return { props: { favourites, data } };
+};
+
+const AustraliaHome = (props) => {
+    console.log(props.data);
     return (
         <>
             <SectionCover imagesrc={images.covers.australia}>
@@ -53,6 +61,13 @@ const AustraliaHome = ({ posts, data }) => {
                     defer
                     src="//findpenguins.com/js/embed.js"
                 ></script>
+            </section>
+            <section className={styles.favourites}>
+                <Heading1
+                    title="Must-Read Posts"
+                    className={styles.favourites__title}
+                />
+                <Favourites data={props.favourites} />
             </section>
         </>
     );

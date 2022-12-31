@@ -1,0 +1,32 @@
+.favourites {
+    margin: 0 auto;
+    max-width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(30rem, 1fr));
+    gap: 2rem;
+}
+
+.item {
+    color: white;
+    height: 20rem;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    position: relative;
+    border-radius: 1rem;
+    box-shadow: .4rem .4rem .4rem rgba(0, 0, 0, .2);
+
+    &__title {
+        font-family: var(--font-special);
+        font-size: 3rem;
+        font-weight: 100;
+    }
+    &__date {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}

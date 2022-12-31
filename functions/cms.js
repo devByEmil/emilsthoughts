@@ -24,7 +24,6 @@ const buildPost = (item) => {
         content: item.fields.content,
     };
 };
-
 const buildCollection = (item) => {
     return {
         id: item.sys.id,
@@ -39,32 +38,17 @@ const buildCollection = (item) => {
         posts: item.fields.posts.map((item) => buildPost(item)),
     };
 };
-
-export const getPostBySlug = async (entry_slug) => {
-    const data = await client.getEntries({
-        content_type: "post",
-        "fields.slug": entry_slug,
-    });
-    const item = data.items[0];
-    const post = buildPost(item);
-
-    // return { post, data }; // DEV
-    return { post };
+const buildFavourites = (item) => {
+    return {
+        id: item.sys.id,
+        title: item.fields.title,
+        posts: item.fields.posts
+            ? item.fields.posts.map((post) => buildPost(post))
+            : [],
+    };
 };
 
-export const getCollectionBySlug = async (slug) => {
-    const data = await client.getEntries({
-        content_type: "collection",
-        "fields.slug": slug,
-    });
-    const item = data.items[0];
-    const collection = buildCollection(item);
-
-    // return { collection, data } // DEV
-    return { collection };
-};
-
-export const getPostsByTag = async (allowed_tags, descending = true) => {
+const sortPosts = (posts, descending = true) => {
     // sort order: -1 = ascending, 1 = descending
     let sort_order;
     if (descending) {
@@ -72,12 +56,6 @@ export const getPostsByTag = async (allowed_tags, descending = true) => {
     } else {
         sort_order = -1;
     }
-
-    const data = await client.getEntries({
-        content_type: "post",
-        "metadata.tags.sys.id[in]": allowed_tags.join(),
-    });
-    const posts = data.items.map((item) => buildPost(item));
 
     posts.sort((a, b) => {
         // from "dd/mm/yyyy" to [yyyy,mm,dd]
@@ -116,7 +94,43 @@ export const getPostsByTag = async (allowed_tags, descending = true) => {
         }
     });
 
-    return { posts };
+    return posts;
+};
+
+export const getPostBySlug = async (entry_slug) => {
+    const data = await client.getEntries({
+        content_type: "post",
+        "fields.slug": entry_slug,
+    });
+    const item = data.items[0];
+    const post = buildPost(item);
+
+    // return { post, data }; // DEV
+    return { post };
+};
+
+export const getCollectionBySlug = async (slug) => {
+    const data = await client.getEntries({
+        content_type: "collection",
+        "fields.slug": slug,
+    });
+    const item = data.items[0];
+    const collection = buildCollection(item);
+
+    // return { collection, data } // DEV
+    return { collection };
+};
+
+export const getPostsByTag = async (allowed_tags, descending = true) => {
+    const data = await client.getEntries({
+        content_type: "post",
+        "metadata.tags.sys.id[in]": allowed_tags.join(),
+    });
+
+    const posts = data.items.map((item) => buildPost(item));
+    const sortedPosts = sortPosts(posts, descending);
+
+    return { posts: sortedPosts };
 };
 
 export const getCollectionsByTag = async (allowed_tags) => {
@@ -127,4 +141,17 @@ export const getCollectionsByTag = async (allowed_tags) => {
     const collections = data.items.map((item) => buildCollection(item));
 
     return { collections, data };
+};
+
+export const getFavouritesByTag = async (tag, descending = true) => {
+    // tag: string
+    const data = await client.getEntries({
+        content_type: "favourites",
+        "metadata.tags.sys.id[all]": tag,
+    });
+
+    const favourites = buildFavourites(data.items[0]);
+    favourites.posts = sortPosts(favourites.posts, descending);
+
+    return { data, favourites };
 };
