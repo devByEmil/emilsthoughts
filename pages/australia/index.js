@@ -43,7 +43,7 @@ const AustraliaHome = (props) => {
                 </div>
             </SectionCover>
             <section className={styles.map}>
-                <Heading1 title="Where am I now?" />
+                {/*} <Heading1 title="Where am I now?" />
                 <div
                     class="findpenguins-media"
                     findpgns-version="1"
@@ -60,15 +60,17 @@ const AustraliaHome = (props) => {
                     async
                     defer
                     src="//findpenguins.com/js/embed.js"
-                ></script>
+    ></script>*/}
             </section>
-            <section className={styles.favourites}>
-                <Heading1
-                    title="Must-Read Posts"
-                    className={styles.favourites__title}
-                />
-                <Favourites data={props.favourites} />
-            </section>
+            {props.favourites.posts.length !== 0 && (
+                <section className={styles.favourites}>
+                    <Heading1
+                        title="Must-Read Posts"
+                        className={styles.favourites__title}
+                    />
+                    <Favourites data={props.favourites} />
+                </section>
+            )}
         </>
     );
 };

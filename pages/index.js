@@ -33,8 +33,8 @@ const Home = () => {
                             and interests.
                         </p>
                         <MainButton
-                            href="/about"
-                            title="About"
+                            href="/contact"
+                            title="Contact"
                             className={styles.headerButton}
                         />
                     </div>
