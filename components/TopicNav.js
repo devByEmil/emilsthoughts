@@ -48,12 +48,12 @@ const TopicNav = (props) => {
                     <Heading3 title="Australia" color="white" />
                 </a>
             </Link>
-            <Link href="#">
+            <Link href="/workinprogress">
                 <a className={styles.topic}>
                     <Heading3 title="Philosophy" color="white" />
                 </a>
             </Link>
-            <Link href="#">
+            <Link href="/workinprogress">
                 <a className={styles.topic}>
                     <Heading3 title="Photography" color="white" />
                 </a>
