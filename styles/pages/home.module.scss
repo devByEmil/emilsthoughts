@@ -1,3 +1,5 @@
+@import "../variables.scss";
+
 // --- HOME HEADER ---
 .headerLogo {
     height: 50rem;
@@ -30,4 +32,19 @@
 .topicNavContainer {
     padding: 0 5rem;
     margin: 5rem 0 20rem 0;
+}
+
+// --- RESPONSIVENESS ---
+@media only screen and (max-width: $tablet) {
+}
+@media only screen and (max-width: $phone) {
+    .headerText {
+        flex-direction: column;
+    }
+    .headerButton {
+        margin-left: 0;
+        margin-top: 2.5rem;
+    }
+}
+@media only screen and (max-width: $smallphone) {
 }

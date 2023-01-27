@@ -13,6 +13,9 @@ const SectionCover = (props) => {
                                 rgba(0, 0, 0, 0.3)
                             ),
                             url(${props.imagesrc});
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center;
                     }
                 `}
             </style>

@@ -15,6 +15,7 @@
     position: relative;
     border-radius: 1rem;
     box-shadow: .4rem .4rem .4rem rgba(0, 0, 0, .2);
+    transition: all .1s ease;
 
     &__title {
         font-family: var(--font-special);
@@ -28,5 +29,6 @@
     }
     &:hover {
         cursor: pointer;
+        transform: scale(1.005)
     }
 }

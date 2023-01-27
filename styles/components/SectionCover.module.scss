@@ -1,3 +1,5 @@
+@import "../variables.scss";
+
 .container {
     background-size: cover;
     margin: 2rem;
@@ -7,4 +9,20 @@
     border-radius: 1rem;
     height: 95vh;
     overflow: hidden;
+    padding: 5rem;
+}
+
+@media only screen and (max-width: $tablet) {
+}
+@media only screen and (max-width: $phone) {
+    .container {
+        padding: 5rem 1rem 5rem 1rem;
+        margin: 0;
+        border-radius: 0;
+    }
+}
+@media only screen and (max-width: $smallphone) {
+    .container {
+        height: 80vh;
+    }
 }

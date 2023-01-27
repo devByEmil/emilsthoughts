@@ -18,7 +18,6 @@ const TopicNav = (props) => {
         >
             <style jsx>{`
                 nav a:nth-child(1) {
-                    grid-row: 1/3;
                     background-image: linear-gradient(
                             to right,
                             rgba(0, 0, 0, 0.4),

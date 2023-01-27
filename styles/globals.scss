@@ -18,9 +18,9 @@
     font-family: Helvetica, Arial, sans-serif;
 }
 html {
-    font-size: 62.5%; // that way 1rem = 10px
     text-align: center;
     background-color: var(--bg-main);
+    font-size: 62.5%; // that way 1rem = 10px
 }
 
 // --- LINKS ---
@@ -37,4 +37,33 @@ a:hover {
 // --- TEXT ---
 p {
     font-size: 1.6rem;
+}
+
+
+// --- RESPONSIVENESS ---
+/* Template
+@media only screen and (max-width: $tablet) {
+}
+@media only screen and (max-width: $phone) {
+}
+@media only screen and (max-width: $smallphone) {
+}
+*/
+// Tablets
+@media only screen and (max-width: $tablet) {
+    html {
+        font-size: 55%;
+    }
+}
+// Phones
+@media only screen and (max-width: $phone) {
+    html {
+        font-size: 45%;
+    }
+}
+// Small Phones
+@media only screen and (max-width: $smallphone) {
+    html {
+        font-size: 35%;
+    }
 }
