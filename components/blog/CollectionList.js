@@ -24,53 +24,57 @@ const CollectionList = (props) => {
     }, []);
 
     return (
-        <section className={styles.carousel_wapper}>
-            <motion.div
-                className={styles.carousel}
-                ref={carousel}
-                animate={{ translateX: currentScroll }}
-            >
-                {props.collections.map((collection) => (
-                    <CollectionItem
-                        collection={collection}
-                        key={collection.id}
-                        ref={card}
-                    />
-                ))}
-            </motion.div>
-            <div
-                className={
-                    styles.button_wrapper + " " + styles.button_wrapper__right
-                }
-                onClick={() => {
-                    if (currentScroll - cardWidth < -maxwidth) {
-                        setCurrentScroll(-maxwidth);
-                    } else {
-                        setCurrentScroll(currentScroll - cardWidth);
-                    }
-                }}
-            >
+        <>
+            <section className={styles.carousel_wapper}>
+                <motion.div
+                    className={styles.carousel}
+                    ref={carousel}
+                    animate={{ translateX: currentScroll }}
+                >
+                    {props.collections.map((collection) => (
+                        <CollectionItem
+                            collection={collection}
+                            key={collection.id}
+                            ref={card}
+                        />
+                    ))}
+                </motion.div>
                 <div
-                    className={styles.button__right + " " + styles.button}
-                ></div>
-            </div>
-            <div
-                className={
-                    styles.button_wrapper + " " + styles.button_wrapper_left
-                }
-                onClick={() => {
-                    if (currentScroll + cardWidth > 0) {
-                        setCurrentScroll(0);
-                    } else {
-                        setCurrentScroll(currentScroll + cardWidth);
+                    className={
+                        styles.button_wrapper +
+                        " " +
+                        styles.button_wrapper__right
                     }
-                }}
-            >
+                    onClick={() => {
+                        if (currentScroll - cardWidth < -maxwidth) {
+                            setCurrentScroll(-maxwidth);
+                        } else {
+                            setCurrentScroll(currentScroll - cardWidth);
+                        }
+                    }}
+                >
+                    <div
+                        className={styles.button__right + " " + styles.button}
+                    ></div>
+                </div>
                 <div
-                    className={styles.button__left + " " + styles.button}
-                ></div>
-            </div>
-        </section>
+                    className={
+                        styles.button_wrapper + " " + styles.button_wrapper_left
+                    }
+                    onClick={() => {
+                        if (currentScroll + cardWidth > 0) {
+                            setCurrentScroll(0);
+                        } else {
+                            setCurrentScroll(currentScroll + cardWidth);
+                        }
+                    }}
+                >
+                    <div
+                        className={styles.button__left + " " + styles.button}
+                    ></div>
+                </div>
+            </section>
+        </>
     );
 };
 
