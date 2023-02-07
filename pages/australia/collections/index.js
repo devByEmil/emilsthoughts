@@ -1,6 +1,7 @@
 import SimpleBlogHeader from "../../../components/blog/SimpleBlogHeader";
 import CollectionList from "../../../components/blog/CollectionList";
 
+import styles from "../../../styles/pages/australia/australiaAllCollections.module.scss";
 import { getCollectionsByTag } from "../../../functions/cms";
 
 export const getStaticProps = async () => {
@@ -19,7 +20,10 @@ const AllCollectionsListing = (props) => {
                 title="Australia: Collections"
                 link="/australia"
             />
-            <CollectionList collections={props.collections} />
+            <CollectionList
+                collections={props.collections}
+                className={styles.list}
+            />
         </>
     );
 };

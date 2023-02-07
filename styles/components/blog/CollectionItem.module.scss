@@ -1,31 +1,45 @@
-.item {
-    height: 65rem;
-    min-width: 60rem;
-    max-width: 60rem;
-    border-radius: 1.5rem;
+.wrapper {
+    width: 75%;
+    max-width: 1000px;
+    height: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    position: relative;
     box-shadow: .4rem .4rem .4rem rgba(0, 0, 0, .4);
-    margin: .75rem 0;
+    overflow: hidden;
+    transition: all .05s ease;
 
     &:not(:last-child) {
-        margin-right: 3rem;
+        margin-bottom: 2.5rem;
     }
     &:hover {
-        cursor: pointer;
+        transform: scale(1.005);
+    }
+    &:hover &__title {
+        opacity: 0;
+    }
+    &:hover &__description {
+        opacity: 1;
     }
 
-    &__box {
-        margin: 20rem 2rem;
+    & * {
+        transition: all .15s ease;
         color: white;
-
-        &__title {
-            font-size: 4.5rem;
-            font-weight: 100;
-            letter-spacing: .3rem;
-            font-family: var(--font-special);
-        }
-        &__description {
-            font-size: 1.6rem;
-            font-weight: 100;
-        }
+    }
+    &__title {
+        font-family: var(--font-special);
+        font-weight: bold;
+        font-size: 4rem;
+    }
+    &__description {
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-weight: 300;
+        width: 90%;
     }
 }

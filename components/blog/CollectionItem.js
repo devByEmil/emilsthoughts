@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-import { forwardRef } from "react";
 import styles from "../../styles/components/blog/CollectionItem.module.scss";
 
-const CollectionItem = forwardRef(({ collection }, ref) => {
+const CollectionItem = ({ collection }) => {
+    console.log(collection);
     return (
         <>
             <style jsx>{`
@@ -19,22 +19,20 @@ const CollectionItem = forwardRef(({ collection }, ref) => {
                     background-position: center;
                 }
             `}</style>
-            <Link href={"/australia/collections/" + collection.slug}>
-                <div className={styles.item + " item"} ref={ref}>
-                    <a>
-                        <div className={styles.item__box}>
-                            <h1 className={styles.item__box__title}>
-                                {collection.title}
-                            </h1>
-                            <h3 className={styles.item__box__description}>
-                                {collection.description}
-                            </h3>
-                        </div>
-                    </a>
-                </div>
+            <Link href={`/australia/collections/${collection.slug}`}>
+                <a className={styles.wrapper + " item"}>
+                    <div>
+                        <h1 className={styles.wrapper__title}>
+                            {collection.title}
+                        </h1>
+                        <h3 className={styles.wrapper__description}>
+                            {collection.description}
+                        </h3>
+                    </div>
+                </a>
             </Link>
         </>
     );
-});
+};
 
 export default CollectionItem;
