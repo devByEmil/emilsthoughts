@@ -2,6 +2,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import Link from "next/link";
 import MyImage from "../../../components/my/MyImage";
+import PreviousPageButton from "../../../components/buttons/PreviousPageButton";
 
 import styles from "../../../styles/pages/australia/australiaPost.module.scss";
 import { getPostBySlug, getPostsByTag } from "../../../functions/cms";
@@ -78,6 +79,7 @@ const AustraliaPostPage = ({ post }) => {
             <header className={styles.header + " header"}>
                 <p className={styles.header__title}>{post.title}</p>
                 <p className={styles.header__publishDate}>{post.publishDate}</p>
+                <PreviousPageButton className={styles.header__previousButton} />
             </header>
             <main className={styles.main}>
                 {documentToReactComponents(post.content, RICH_TEXT_OPTIONS)}

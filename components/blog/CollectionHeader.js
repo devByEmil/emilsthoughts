@@ -1,3 +1,5 @@
+import PreviousPageButton from "../buttons/PreviousPageButton";
+
 import styles from "../../styles/components/blog/CollectionHeader.module.scss";
 
 /* PROPS ?=optional
@@ -29,6 +31,7 @@ const CollectionHeader = (props) => {
                         {props.description}
                     </h3>
                 </div>
+                <PreviousPageButton className={styles.header__previousButton} />
             </header>
         </>
     );

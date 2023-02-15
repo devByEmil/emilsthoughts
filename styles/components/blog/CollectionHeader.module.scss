@@ -4,6 +4,7 @@
     align-items: center;
     justify-items: center;
     margin-bottom: 7.5rem;
+    position: relative;
 
     &__box {
         display: grid;
@@ -22,5 +23,10 @@
             max-width: 50%;
             color: white;
         }
+    }
+    &__previousButton {
+        position: absolute;
+        top: 3rem;
+        left: 2.5rem;
     }
 }
