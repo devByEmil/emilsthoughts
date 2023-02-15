@@ -1,12 +1,16 @@
 import emailjs from "@emailjs/browser";
 import Heading1 from "./typography/Heading1";
 import Heading3 from "./typography/Heading3";
+import { useState } from "react";
 
 import styles from "../styles/components/ContactForm.module.scss";
 import images from "../data/images";
 
 const ContactForm = (props) => {
+    const [loading, setLoading] = useState(false);
+
     const sendMail = async (e) => {
+        setLoading(true);
         e.preventDefault();
 
         // build email
@@ -32,6 +36,8 @@ const ContactForm = (props) => {
 
         // clear form
         e.target.reset();
+
+        setLoading(false);
     };
 
     return (
@@ -47,6 +53,11 @@ const ContactForm = (props) => {
                 }
             `}</style>
             <div className={styles.wrapper} id="wrapper">
+                {loading && (
+                    <div className={styles.sending}>
+                        <h1 className={styles.sending__text}>Sending...</h1>
+                    </div>
+                )}
                 <div className={styles.info}>
                     <div className={styles.info__heading}>
                         <Heading1 title="Interested?" color="white" />
