@@ -12,6 +12,7 @@ import styles from "../../styles/components/my/MyImage.module.scss";
 ? alt: image alternative text
 ? link: make image a link, provide source
 ? dontcenter: don't center the image
+? floatingNavBtn: ref for FloatingNav checkbox to close when item is clicked
 */
 
 const MyImage = (props) => {
@@ -29,7 +30,14 @@ const MyImage = (props) => {
             <div className={styles.container + " container"}>
                 {props.link ? (
                     <Link href={props.link}>
-                        <a>
+                        <a
+                            onClick={
+                                props.floatingNavBtn
+                                    ? () =>
+                                          (props.floatingNavBtn.current.checked = false)
+                                    : ""
+                            }
+                        >
                             <Image
                                 src={props.src}
                                 alt={props.alt ? props.alt : "Alternative"}

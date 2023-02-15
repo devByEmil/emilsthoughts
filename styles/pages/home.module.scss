@@ -28,6 +28,8 @@
 // --- TOPICS ---
 .topics {
     margin-top: 20rem;
+    display: grid;
+    justify-items: center;
 }
 .topicNavContainer {
     padding: 0 5rem;

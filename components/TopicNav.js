@@ -7,6 +7,7 @@ import images from "../data/images";
 
 /* PROPS
 - className: add styles to nav container
+? floatingNavBtn: ref for FloatingNav checkbox to close when item is clicked
 */
 
 const TopicNav = (props) => {
@@ -20,40 +21,64 @@ const TopicNav = (props) => {
                 nav a:nth-child(1) {
                     background-image: linear-gradient(
                             to right,
-                            rgba(0, 0, 0, 0.4),
-                            rgba(0, 0, 0, 0.4)
+                            rgba(0, 0, 0, 0.2),
+                            rgba(0, 0, 0, 0.2)
                         ),
                         url(${images.covers.australia});
                 }
                 nav a:nth-child(2) {
                     background-image: linear-gradient(
                             to right,
-                            rgba(0, 0, 0, 0.4),
-                            rgba(0, 0, 0, 0.4)
+                            rgba(0, 0, 0, 0.2),
+                            rgba(0, 0, 0, 0.2)
                         ),
                         url(${images.covers.philosophy});
                 }
                 nav a:nth-child(3) {
                     background-image: linear-gradient(
                             to right,
-                            rgba(0, 0, 0, 0.4),
-                            rgba(0, 0, 0, 0.4)
+                            rgba(0, 0, 0, 0.2),
+                            rgba(0, 0, 0, 0.2)
                         ),
                         url(${images.covers.photography});
                 }
             `}</style>
             <Link href="/australia">
-                <a className={styles.topic}>
+                <a
+                    className={styles.topic}
+                    onClick={
+                        props.floatingNavBtn
+                            ? () =>
+                                  (props.floatingNavBtn.current.checked = false)
+                            : ""
+                    }
+                >
                     <Heading3 title="Australia" color="white" />
                 </a>
             </Link>
             <Link href="/workinprogress">
-                <a className={styles.topic}>
+                <a
+                    className={styles.topic}
+                    onClick={
+                        props.floatingNavBtn
+                            ? () =>
+                                  (props.floatingNavBtn.current.checked = false)
+                            : ""
+                    }
+                >
                     <Heading3 title="Philosophy" color="white" />
                 </a>
             </Link>
             <Link href="/workinprogress">
-                <a className={styles.topic}>
+                <a
+                    className={styles.topic}
+                    onClick={
+                        props.floatingNavBtn
+                            ? () =>
+                                  (props.floatingNavBtn.current.checked = false)
+                            : ""
+                    }
+                >
                     <Heading3 title="Photography" color="white" />
                 </a>
             </Link>
