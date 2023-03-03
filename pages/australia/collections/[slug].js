@@ -1,5 +1,6 @@
 import CollectionHeader from "../../../components/blog/CollectionHeader";
 import PostListing from "../../../components/blog/PostList";
+import Meta from "../../../components/Meta";
 
 import styles from "../../../styles/pages/australia/australiaAllCollections.module.scss";
 import {
@@ -26,9 +27,12 @@ export const getStaticProps = async (context) => {
 };
 
 const CollectionPage = ({ collection }) => {
-    console.log(collection);
     return (
         <>
+            <Meta
+                title={collection.title}
+                description={collection.description}
+            />
             <CollectionHeader
                 title={collection.title}
                 description={collection.description}

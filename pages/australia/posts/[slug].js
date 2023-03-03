@@ -3,6 +3,7 @@ import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import Link from "next/link";
 import MyImage from "../../../components/my/MyImage";
 import PreviousPageButton from "../../../components/buttons/PreviousPageButton";
+import Meta from "../../../components/Meta";
 
 import styles from "../../../styles/pages/australia/australiaPost.module.scss";
 import { getPostBySlug, getPostsByTag } from "../../../functions/cms";
@@ -28,8 +29,6 @@ export const getStaticProps = async (context) => {
 };
 
 const AustraliaPostPage = ({ post }) => {
-    console.log(post);
-
     const RICH_TEXT_OPTIONS = {
         renderNode: {
             [BLOCKS.HR]: () => <hr className={styles.richtext__hr} />,
@@ -76,6 +75,7 @@ const AustraliaPostPage = ({ post }) => {
                         url("${post.cover.url}");
                 }
             `}</style>
+            <Meta title={post.title} description={post.description} />
             <header className={styles.header + " header"}>
                 <p className={styles.header__title}>{post.title}</p>
                 <p className={styles.header__publishDate}>{post.publishDate}</p>

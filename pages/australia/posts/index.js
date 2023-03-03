@@ -1,7 +1,9 @@
 import SimpleBlogHeader from "../../../components/blog/SimpleBlogHeader";
 import PostList from "../../../components/blog/PostList";
+import Meta from "../../../components/Meta";
 
 import styles from "../../../styles/pages/australia/australiaAllPosts.module.scss";
+import text from "../../../data/text";
 import { getPostsByTag } from "../../../functions/cms";
 
 export const getStaticProps = async () => {
@@ -17,6 +19,10 @@ const AllPostsListing = ({ posts }) => {
     console.log(posts);
     return (
         <>
+            <Meta
+                title="Australia: Posts"
+                description={text.australia.metaDescription}
+            />
             <SimpleBlogHeader title="Australia: All Posts" link="/australia" />
             <PostList posts={posts} />
         </>

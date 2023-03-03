@@ -3,6 +3,7 @@ import MyImage from "../../components/my/MyImage";
 import MainButton from "../../components/buttons/MainButton";
 import Heading1 from "../../components/typography/Heading1";
 import Favourites from "../../components/blog/Favourites";
+import Meta from "../../components/Meta";
 
 import styles from "../../styles/pages/australia/australiaHome.module.scss";
 import images from "../../data/images";
@@ -18,6 +19,10 @@ const AustraliaHome = (props) => {
     console.log(props.data);
     return (
         <>
+            <Meta
+                title="Australia"
+                description={text.australia.metaDescription}
+            />
             <SectionCover imagesrc={images.covers.australia}>
                 <div className={styles.logobox}>
                     <MyImage

@@ -37,7 +37,7 @@ const Footer = (props) => {
                 href="/supportme"
                 className={styles.footer__button}
             />
-            <p className={styles.footer__copyright}>&copy; Emil Rädsch 2022</p>
+            <p className={styles.footer__copyright}>&copy; Emil Rädsch 2023</p>
         </footer>
     );
 };
