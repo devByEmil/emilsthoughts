@@ -26,7 +26,7 @@ const Home = () => {
                         <p className={styles.headerText__hi}>Hi!</p>
                         <p className={styles.headerText__text}>
                             I am Emil, a 19 year old boy from Germany, currently
-                            in Australia. TEST
+                            in Australia.
                             <br />
                             On this blog, I write about my thoughts, experiences
                             and interests.
