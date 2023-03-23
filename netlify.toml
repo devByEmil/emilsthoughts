@@ -1,0 +1,10 @@
+[[plugins]]
+package = "@netlify/plugin-nextjs"
+
+[build]
+base="./"
+command = "npm run build"
+publish = ".next/"
+
+[functions]
+directory="cloudfuntions/"

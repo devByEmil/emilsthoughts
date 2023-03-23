@@ -5,7 +5,6 @@ import Heading1 from "../components/typography/Heading1";
 import TopicNav from "../components/TopicNav";
 
 import styles from "../styles/pages/home.module.scss";
-import bannerVertical from "../public/Banner Big Vertical.png";
 import images from "../data/images";
 
 // Import: (1) Components (2) styles, data, etc
@@ -17,7 +16,7 @@ const Home = () => {
                 <SectionCover imagesrc={images.covers.home}>
                     <div className={styles.headerLogo}>
                         <Image
-                            src={bannerVertical}
+                            src={images.bannerBigV}
                             alt="emilsthoughts Logo"
                             layout="fill"
                             objectFit="contain"

@@ -67,7 +67,10 @@ const ContactForm = (props) => {
                             className={styles.info__heading__subheading}
                         />
                     </div>
-                    <label for="formsubmit" className={styles.info__formsubmit}>
+                    <label
+                        htmlFor="formsubmit"
+                        className={styles.info__formsubmit}
+                    >
                         Send
                     </label>
                 </div>

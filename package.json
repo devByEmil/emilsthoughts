@@ -12,12 +12,14 @@
     "@contentful/rich-text-react-renderer": "^15.12.1",
     "@contentful/rich-text-types": "^15.13.2",
     "@emailjs/browser": "^3.6.2",
+    "@netlify/plugin-nextjs": "^4.32.2",
     "contentful": "^9.2.9",
     "framer-motion": "^7.6.6",
     "next": "12.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
+    "sharp": "^0.31.3",
     "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
