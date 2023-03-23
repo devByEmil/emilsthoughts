@@ -1,14 +1,23 @@
 import Link from "next/link";
-/*
-                .wrapper:hover {
-                    background-image: linear-gradient(
-                            to right,
-                            rgba(0, 0, 0, 0.6),
-                            rgba(0, 0, 0, 0.6)
-                        ),
-                        url(${post.cover.url});
-                }*/
 import styles from "../../styles/components/blog/PostItem.module.scss";
+
+/*
+<Link href={`/australia/posts/${post.slug}`}>
+                <a className={styles.wrapper__link}>
+                    <div className={`${styles.wrapper} wrapper`}>
+                        <p className={styles.wrapper__publishDate}>
+                            {post.publishDate}
+                        </p>
+                        <h3 className={styles.wrapper__title}>{post.title}</h3>
+                        <div className={styles.wrapper__descriptionbox}>
+                            <p className={styles.wrapper__description}>
+                                {post.description}
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </Link>
+            */
 
 const PostItem = ({ post }) => {
     return (
@@ -26,8 +35,9 @@ const PostItem = ({ post }) => {
                     background-position: center;
                 }
             `}</style>
+
             <Link href={`/australia/posts/${post.slug}`}>
-                <a>
+                <a className={styles.wrapper__link}>
                     <div className={`${styles.wrapper} wrapper`}>
                         <p className={styles.wrapper__publishDate}>
                             {post.publishDate}
