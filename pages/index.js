@@ -32,8 +32,8 @@ const Home = () => {
                             and interests.
                         </p>
                         <MainButton
-                            href="/contact"
-                            title="Contact"
+                            href="/about"
+                            title="What and Why"
                             className={styles.headerButton}
                         />
                     </div>
