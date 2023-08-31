@@ -5,11 +5,11 @@ import MyImage from "../../../components/my/MyImage";
 import PreviousPageButton from "../../../components/buttons/PreviousPageButton";
 import Meta from "../../../components/Meta";
 
-import styles from "../../../styles/pages/australia/australiaPost.module.scss";
+import styles from "../../../styles/pages/travel/travelPost.module.scss";
 import { getPostBySlug, getPostsByTag } from "../../../functions/cms";
 
 export const getStaticPaths = async () => {
-    const ALLOWED_TAGS = ["australia"];
+    const ALLOWED_TAGS = ["travel"];
     const { posts } = await getPostsByTag(ALLOWED_TAGS);
 
     const paths = posts.map((item) => ({
@@ -28,7 +28,7 @@ export const getStaticProps = async (context) => {
     };
 };
 
-const AustraliaPostPage = ({ post }) => {
+const TravelPostPage = ({ post }) => {
     const RICH_TEXT_OPTIONS = {
         renderNode: {
             [BLOCKS.HR]: () => <hr className={styles.richtext__hr} />,
@@ -88,4 +88,4 @@ const AustraliaPostPage = ({ post }) => {
     );
 };
 
-export default AustraliaPostPage;
+export default TravelPostPage;

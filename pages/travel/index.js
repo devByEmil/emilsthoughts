@@ -5,25 +5,22 @@ import Heading1 from "../../components/typography/Heading1";
 import Favourites from "../../components/blog/Favourites";
 import Meta from "../../components/Meta";
 
-import styles from "../../styles/pages/australia/australiaHome.module.scss";
+import styles from "../../styles/pages/travel/travelHome.module.scss";
 import images from "../../data/images";
 import text from "../../data/text";
 import { getFavouritesByTag } from "../../functions/cms";
 
 export const getStaticProps = async () => {
-    const { favourites, data } = await getFavouritesByTag("australia");
+    const { favourites, data } = await getFavouritesByTag("travel");
     return { props: { favourites, data } };
 };
 
-const AustraliaHome = (props) => {
+const TravelHome = (props) => {
     console.log(props.data);
     return (
         <>
-            <Meta
-                title="Australia"
-                description={text.australia.metaDescription}
-            />
-            <SectionCover imagesrc={images.covers.australia}>
+            <Meta title="Travel" description={text.travel.metaDescription} />
+            <SectionCover imagesrc={images.covers.travel}>
                 <div className={styles.logobox}>
                     <MyImage
                         src={images.logo}
@@ -34,17 +31,12 @@ const AustraliaHome = (props) => {
                         alt="Australia"
                         dontcenter
                     />
-                    <p className={styles.logobox__title}>Australia</p>
+                    <p className={styles.logobox__title}>Travel</p>
                 </div>
-                <p className={styles.description}>
-                    {text.australia.description}
-                </p>
+                <p className={styles.description}>{text.travel.description}</p>
                 <div className={styles.buttonbox}>
-                    <MainButton href="australia/posts" title="All Posts" />
-                    <MainButton
-                        href="australia/collections"
-                        title="Collections"
-                    />
+                    <MainButton href="travel/posts" title="All Posts" />
+                    <MainButton href="travel/collections" title="Collections" />
                 </div>
             </SectionCover>
             <section className={styles.map}>
@@ -80,4 +72,4 @@ const AustraliaHome = (props) => {
     );
 };
 
-export default AustraliaHome;
+export default TravelHome;

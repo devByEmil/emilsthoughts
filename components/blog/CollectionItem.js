@@ -19,7 +19,7 @@ const CollectionItem = ({ collection }) => {
                     background-position: center;
                 }
             `}</style>
-            <Link href={`/australia/collections/${collection.slug}`}>
+            <Link href={`/travel/collections/${collection.slug}`}>
                 <a className={styles.wrapper + " item"}>
                     <div>
                         <h1 className={styles.wrapper__title}>

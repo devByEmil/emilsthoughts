@@ -22,7 +22,7 @@ const FavouritePost = ({ item }) => {
                     background-position: center;
                 }
             `}</style>
-            <Link href={"australia/posts/" + item.slug}>
+            <Link href={"travel/posts/" + item.slug}>
                 <a>
                     <div className={styles.item + " item"}>
                         <h2 className={styles.item__title}>{item.title}</h2>

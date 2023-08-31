@@ -107,7 +107,7 @@ const ContactForm = (props) => {
                             <option value="" disabled selected>
                                 Concerning what topic?
                             </option>
-                            <option value="Australia">Australia</option>
+                            <option value="Travel">Travel</option>
                             <option value="Philosophy">Philosophy</option>
                             <option value="Photography">Photography</option>
                             <option value="Other">Other</option>

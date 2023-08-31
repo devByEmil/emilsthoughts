@@ -34,7 +34,7 @@ const Meta = (props) => {
                 content={
                     props.keywords
                         ? props.keywords
-                        : "Travel, Photography, Philosophy, Australia, Work and Travel, Thoughts, emilsthoughts, Writing, Coding"
+                        : "Travel, Photography, Philosophy, Work and Travel, Thoughts, emilsthoughts, Writing, Coding"
                 }
             />
         </Head>

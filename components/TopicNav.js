@@ -24,7 +24,7 @@ const TopicNav = (props) => {
                             rgba(0, 0, 0, 0.2),
                             rgba(0, 0, 0, 0.2)
                         ),
-                        url(${images.covers.australia});
+                        url(${images.covers.travel});
                 }
                 nav a:nth-child(2) {
                     background-image: linear-gradient(
@@ -43,7 +43,7 @@ const TopicNav = (props) => {
                         url(${images.covers.photography});
                 }
             `}</style>
-            <Link href="/australia">
+            <Link href="/travel">
                 <a
                     className={styles.topic}
                     onClick={
@@ -53,7 +53,7 @@ const TopicNav = (props) => {
                             : ""
                     }
                 >
-                    <Heading3 title="Australia" color="white" />
+                    <Heading3 title="Travel" color="white" />
                 </a>
             </Link>
             <Link href="/workinprogress">

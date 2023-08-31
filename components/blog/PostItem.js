@@ -2,7 +2,7 @@ import Link from "next/link";
 import styles from "../../styles/components/blog/PostItem.module.scss";
 
 /*
-<Link href={`/australia/posts/${post.slug}`}>
+<Link href={`/travel/posts/${post.slug}`}>
                 <a className={styles.wrapper__link}>
                     <div className={`${styles.wrapper} wrapper`}>
                         <p className={styles.wrapper__publishDate}>
@@ -36,7 +36,7 @@ const PostItem = ({ post }) => {
                 }
             `}</style>
 
-            <Link href={`/australia/posts/${post.slug}`}>
+            <Link href={`/travel/posts/${post.slug}`}>
                 <a className={styles.wrapper__link}>
                     <div className={`${styles.wrapper} wrapper`}>
                         <p className={styles.wrapper__publishDate}>
