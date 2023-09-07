@@ -1,29 +1,11 @@
 import Link from "next/link";
 import styles from "../../styles/components/blog/PostItem.module.scss";
 
-/*
-<Link href={`/travel/posts/${post.slug}`}>
-                <a className={styles.wrapper__link}>
-                    <div className={`${styles.wrapper} wrapper`}>
-                        <p className={styles.wrapper__publishDate}>
-                            {post.publishDate}
-                        </p>
-                        <h3 className={styles.wrapper__title}>{post.title}</h3>
-                        <div className={styles.wrapper__descriptionbox}>
-                            <p className={styles.wrapper__description}>
-                                {post.description}
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            </Link>
-            */
-
 const PostItem = ({ post }) => {
     return (
         <>
             <style jsx>{`
-                .wrapper {
+                .image {
                     background-image: linear-gradient(
                             to right,
                             rgba(0, 0, 0, 0.2),
@@ -37,14 +19,39 @@ const PostItem = ({ post }) => {
             `}</style>
 
             <Link href={`/travel/posts/${post.slug}`}>
-                <a className={styles.wrapper__link}>
-                    <div className={`${styles.wrapper} wrapper`}>
-                        <p className={styles.wrapper__publishDate}>
+                <a className={styles.wrapperHoverLink}>
+                    <div className={`${styles.wrapperHover} image`}>
+                        <p className={styles.wrapperHover__publishDate}>
                             {post.publishDate}
                         </p>
-                        <h3 className={styles.wrapper__title}>{post.title}</h3>
-                        <div className={styles.wrapper__descriptionbox}>
-                            <p className={styles.wrapper__description}>
+                        <h3 className={styles.wrapperHover__title}>
+                            {post.title}
+                        </h3>
+                        <div className={styles.wrapperHover__descriptionbox}>
+                            <p className={styles.wrapperHover__description}>
+                                {post.description}
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </Link>
+            <Link href={`/travel/posts/${post.slug}`}>
+                <a className={styles.wrapperMobileLink}>
+                    <div className={styles.wrapperMobile}>
+                        <div className={styles.wrapperMobile__top + " image"}>
+                            <p
+                                className={
+                                    styles.wrapperMobile__top__publishDate
+                                }
+                            >
+                                {post.publishDate}
+                            </p>
+                            <h3 className={styles.wrapperMobile__top__title}>
+                                {post.title}
+                            </h3>
+                        </div>
+                        <div className={styles.wrapperMobile__bottom}>
+                            <p className={styles.wrapperMobile__bottom__text}>
                                 {post.description}
                             </p>
                         </div>
