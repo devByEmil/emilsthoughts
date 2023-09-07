@@ -25,6 +25,9 @@ const buildPost = (item) => {
     };
 };
 const buildCollection = (item) => {
+    let postCount = 0;
+    item.fields.posts.forEach(() => postCount++);
+
     return {
         id: item.sys.id,
         title: item.fields.title,
@@ -36,6 +39,13 @@ const buildCollection = (item) => {
             details: item.fields.cover.fields.file.details.image,
         },
         posts: item.fields.posts.map((item) => buildPost(item)),
+        lastUpdated: item.sys.updatedAt
+            .split("T")[0]
+            .split("-")
+            .reverse()
+            .toString()
+            .replaceAll(",", "/"),
+        postCount,
     };
 };
 const buildFavourites = (item) => {
@@ -143,11 +153,10 @@ export const getCollectionsByTag = async (allowed_tags) => {
     return { collections, data };
 };
 
-export const getFavouritesByTag = async (tag, descending = true) => {
-    // tag: string
+export const getFavouritesByTag = async (allowed_tags, descending = true) => {
     const data = await client.getEntries({
         content_type: "favourites",
-        "metadata.tags.sys.id[all]": tag,
+        "metadata.tags.sys.id[all]": allowed_tags.join(),
     });
 
     const favourites = buildFavourites(data.items[0]);

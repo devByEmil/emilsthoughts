@@ -4,19 +4,32 @@ import MainButton from "../../components/buttons/MainButton";
 import Heading1 from "../../components/typography/Heading1";
 import Favourites from "../../components/blog/Favourites";
 import Meta from "../../components/Meta";
+import PostListing from "../../components/blog/PostList";
+import CollectionList from "../../components/blog/CollectionList";
 
+import { useState } from "react";
 import styles from "../../styles/pages/travel/travelHome.module.scss";
 import images from "../../data/images";
 import text from "../../data/text";
-import { getFavouritesByTag } from "../../functions/cms";
+import {
+    getFavouritesByTag,
+    getPostsByTag,
+    getCollectionsByTag,
+} from "../../functions/cms";
 
 export const getStaticProps = async () => {
-    const { favourites, data } = await getFavouritesByTag("travel");
-    return { props: { favourites, data } };
+    const ALLOWED_TAGS = ["travel"];
+    const { posts } = await getPostsByTag(ALLOWED_TAGS);
+    const { collections } = await getCollectionsByTag(ALLOWED_TAGS);
+    const { favourites } = await getFavouritesByTag(ALLOWED_TAGS);
+
+    return { props: { favourites, posts, collections } };
 };
 
 const TravelHome = (props) => {
-    console.log(props.data);
+    // 1 = Collections; 2 = All Posts
+    const [contentSwitch, setContentSwitch] = useState(1);
+
     return (
         <>
             <Meta title="Travel" description={text.travel.metaDescription} />
@@ -34,30 +47,33 @@ const TravelHome = (props) => {
                     <p className={styles.logobox__title}>Travel</p>
                 </div>
                 <p className={styles.description}>{text.travel.description}</p>
-                <div className={styles.buttonbox}>
-                    <MainButton href="travel/posts" title="All Posts" />
-                    <MainButton href="travel/collections" title="Collections" />
-                </div>
+                <MainButton
+                    className={styles.routebutton}
+                    href="https://findpenguins.com/65bnkkro5pm6v/trip/australia-work-and-travel"
+                    title="See my Route"
+                    targetblank
+                />
             </SectionCover>
-            <section className={styles.map}>
-                {/*} <Heading1 title="Where am I now?" />
-                <div
-                    class="findpenguins-media"
-                    findpgns-version="1"
-                    findpgns-embed="user"
-                >
-                    <a
-                        href="https://findpenguins.com/65bnkkro5pm6v/trip/australia-work-and-travel"
-                        target="_top"
+            <section className={styles.content}>
+                <div className={styles.content__switch}>
+                    <h2
+                        onClick={() => setContentSwitch(1)}
+                        style={contentSwitch === 1 ? {} : { color: "#A3A3A3" }}
                     >
-                        Map
-                    </a>
+                        Collections
+                    </h2>
+                    <h2
+                        onClick={() => setContentSwitch(2)}
+                        style={contentSwitch === 2 ? {} : { color: "#A3A3A3" }}
+                    >
+                        All Posts
+                    </h2>
                 </div>
-                <script
-                    async
-                    defer
-                    src="//findpenguins.com/js/embed.js"
-    ></script>*/}
+                {contentSwitch === 1 ? (
+                    <CollectionList collections={props.collections} />
+                ) : (
+                    <PostListing posts={props.posts} />
+                )}
             </section>
             {props.favourites.posts.length !== 0 && (
                 <section className={styles.favourites}>

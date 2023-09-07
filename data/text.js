@@ -2,9 +2,9 @@
 const text = {
     travel: {
         description:
-            "Follow me through my time in Australia, where I work, learn, experience and travel. Be open for new things!",
+            "Follow me on my Journey, where I work, learn and see lots of new things :)",
         metaDescription:
-            "Experiences and Thoughts of a 20 year travelling Australia in his SUV.",
+            "Experiences and Thoughts of a 20 year old on the road",
     },
 };
 

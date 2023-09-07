@@ -6,6 +6,7 @@ import styles from "../../styles/components/buttons/MainButton.module.scss";
 href: href
 title: title
 ? className: style <a></a>
+? targetblank: open target in new tab
 */
 
 const MainButton = (props) => {
@@ -16,6 +17,7 @@ const MainButton = (props) => {
                     styles.container +
                     ` ${props.className ? props.className : ""}`
                 }
+                target={props.targetblank ? "_blank" : "_self"}
             >
                 <p className={styles.title}>
                     {props.title ? props.title : "Button"}

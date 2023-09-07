@@ -16,21 +16,15 @@
     }
 }
 
+.routebutton {
+    width: 30rem;
+    align-self: center;
+}
+
 .description {
     margin-bottom: 2rem;
     font-size: 2.25rem;
     color: white;
-}
-
-.buttonbox {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    & > :not(:last-child) {
-        margin-right: 10rem;
-    }
 }
 
 .map {
@@ -48,6 +42,27 @@
     }
 }
 
+.content {
+    &__switch {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 5rem 0;
+
+        & * {
+            font-size: 2.25rem;
+            font-weight: 100;
+
+            &:last-child {
+                margin-left: 10rem;
+            }
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: $tablet) {
 }
 @media only screen and (max-width: $phone) {
@@ -56,12 +71,5 @@
 @media only screen and (max-width: $smallphone) {
     .logobox {
         flex-direction: column;
-    }
-    .buttonbox {
-        flex-direction: column;
-        
-        & *:not(:last-child) {
-            margin: 0 0 2rem 0;
-        }
     }
 }
