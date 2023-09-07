@@ -20,6 +20,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all .1s ease;
+
+    &:hover {
+        transform: scale(1.0075);
+    }
 }
 .topic:nth-child(1) {
     grid-row: 1/3;
