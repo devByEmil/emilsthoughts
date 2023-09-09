@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Meta from "../components/Meta";
 import SimpleHeader from "../components/SimpleHeader";
 import Heading3 from "../components/typography/Heading3";

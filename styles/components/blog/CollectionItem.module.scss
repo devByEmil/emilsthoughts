@@ -1,3 +1,5 @@
+@import "../../variables.scss";
+
 .wrapper {
     background-color: var(--bg-light);
     width: 100%;
@@ -21,6 +23,7 @@
         justify-content: center;
         flex-direction: column;
         position: relative;
+        padding: 2.5rem;
 
         &__title {
             font-size: 4.25rem;
@@ -39,4 +42,12 @@
         color: black;
         transform: scale(1.005);
     }
+}
+
+// --- RESPONSIVENESS ---
+@media only screen and (max-width: $tablet) {
+}
+@media only screen and (max-width: $phone) {
+}
+@media only screen and (max-width: $smallphone) {
 }

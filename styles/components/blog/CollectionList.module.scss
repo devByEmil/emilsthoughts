@@ -1,3 +1,5 @@
+@import "../../variables.scss";
+
 .wrapper {
     padding: 0 15rem 0 15rem;
     display: flex;
@@ -6,5 +8,22 @@
 
     & *:not(:last-child) {
         margin-bottom: 2rem;
+    }
+}
+
+// --- RESPONSIVENESS ---
+@media only screen and (max-width: $tablet) {
+    .wrapper {
+        padding: 0 10rem;
+    }
+}
+@media only screen and (max-width: $phone) {
+    .wrapper {
+        padding: 0 5rem;
+    }
+}
+@media only screen and (max-width: $smallphone) {
+    .wrapper {
+        padding: 0 2.5rem;
     }
 }
