@@ -3,13 +3,22 @@ import SectionCover from "../components/SectionCover";
 import MainButton from "../components/buttons/MainButton";
 import Heading1 from "../components/typography/Heading1";
 import TopicNav from "../components/TopicNav";
+import PostListing from "../components/blog/PostList";
 
 import styles from "../styles/pages/home.module.scss";
 import images from "../data/images";
+import { getFavouritesByTag } from "../functions/cms";
 
 // Import: (1) Components (2) styles, data, etc
 
-const Home = () => {
+export const getStaticProps = async () => {
+    const ALLOWED_TAGS = ["general"];
+    const { favourites } = await getFavouritesByTag(ALLOWED_TAGS);
+
+    return { props: { favourites } };
+};
+
+const Home = (props) => {
     return (
         <>
             <section>
@@ -43,6 +52,15 @@ const Home = () => {
                 <Heading1 title="Topics" />
                 <TopicNav className={styles.topicNavContainer} />
             </section>
+            {props.favourites.posts.length > 0 && (
+                <section className={styles.favourites}>
+                    <Heading1
+                        title="My Best Stuff"
+                        className={styles.favourites__title}
+                    />
+                    <PostListing posts={props.favourites.posts} />
+                </section>
+            )}
         </>
     );
 };

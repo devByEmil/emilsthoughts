@@ -2,7 +2,6 @@ import CollectionHeader from "../../../components/blog/CollectionHeader";
 import PostListing from "../../../components/blog/PostList";
 import Meta from "../../../components/Meta";
 
-import styles from "../../../styles/pages/travel/travelAllCollections.module.scss";
 import {
     getCollectionBySlug,
     getCollectionsByTag,
@@ -38,7 +37,7 @@ const CollectionPage = ({ collection }) => {
                 description={collection.description}
                 cover={collection.cover}
             />
-            <main className={styles.content}>
+            <main>
                 <PostListing posts={collection.posts} />
             </main>
         </>

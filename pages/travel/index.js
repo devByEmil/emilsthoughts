@@ -1,11 +1,10 @@
 import SectionCover from "../../components/SectionCover";
 import MyImage from "../../components/my/MyImage";
 import MainButton from "../../components/buttons/MainButton";
-import Heading1 from "../../components/typography/Heading1";
-import Favourites from "../../components/blog/Favourites";
 import Meta from "../../components/Meta";
 import PostListing from "../../components/blog/PostList";
 import CollectionList from "../../components/blog/CollectionList";
+import Heading1 from "../../components/typography/Heading1";
 
 import { useState } from "react";
 import styles from "../../styles/pages/travel/travelHome.module.scss";
@@ -75,13 +74,13 @@ const TravelHome = (props) => {
                     <PostListing posts={props.posts} />
                 )}
             </section>
-            {props.favourites.posts.length !== 0 && (
+            {props.favourites.posts.length > 0 && (
                 <section className={styles.favourites}>
                     <Heading1
-                        title="Must-Read Posts"
+                        title="My Best Travel Stuff"
                         className={styles.favourites__title}
                     />
-                    <Favourites data={props.favourites} />
+                    <PostListing posts={props.favourites.posts} />
                 </section>
             )}
         </>
