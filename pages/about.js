@@ -26,8 +26,8 @@ const About = (props) => {
                     it. This wasn&apos;t a continuous progress at all, there
                     where weeks in a row where I didn&apos;t do anything for the
                     website. Even now, as I am writing this, the blog isn&apos;t
-                    nearly done; I haven't even finished the first post. I am
-                    writing this so that everybody who happens to come across
+                    nearly done; I haven&apos;t even finished the first post. I
+                    am writing this so that everybody who happens to come across
                     this, knows what it is and more importantly, why it exists.
                     To come to an conclusion:
                     <br />
