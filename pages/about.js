@@ -12,28 +12,39 @@ const About = (props) => {
             <main className={styles.content}>
                 <Heading1 title="What and Why" />
                 <p className={styles.content__text}>
-                    This isn&apos;t the typical travel-blog focused on making
-                    money, with guides, tips and tricks and stuff like that
-                    (That said, I might try to earn a few bucks off this at some
-                    point lol). This is a different kind of blog - somewhere
-                    where I just write about things in my head, whenever I feel
-                    like writing them down.
-                    <br />
-                    Why do I do this? Honestly, I was thinking about this quite
-                    a while - at some point, a few months before going to
-                    Australia, I just felt like starting a blog, and the idea
-                    kind of just kept being on my mind - so I started building
-                    it. This wasn&apos;t a continuous progress at all, there
-                    where weeks in a row where I didn&apos;t do anything for the
-                    website. Even now, as I am writing this, the blog isn&apos;t
-                    nearly done; I haven&apos;t even finished the first post. I
-                    am writing this so that everybody who happens to come across
-                    this, knows what it is and more importantly, why it exists.
-                    To come to an conclusion:
+                    I started building this blog before I came to Australia,
+                    around july 2022.
                     <br />
                     <br />
-                    This is a random blog about things shooting around on my
-                    mind, written down because I felt like it.
+                    Back then it wasn't so much much about the actual writing
+                    part but more about the coding. I didn't use a CMS like
+                    Wordpress or Squarespace, even though that would have been
+                    much faster, because for me, the main bit was about coding
+                    the website, not creating content for it. I didn't finish it
+                    up before I left Germany though, there was just too much
+                    going on at home that I couldn't find enough time. So it
+                    became a bit of a side hobby while travelling, whenever I
+                    had free time and felt the need to be productive.
+                    <br />
+                    <br />
+                    This wasn't the case that often, especially in the first few
+                    months after arriving; Everything was new and I couldn't put
+                    any thought and effort into the blog. Every now and then I
+                    kept working on it though. I made very slow progress, but I
+                    made progress. While travelling I also started writing quite
+                    a bit, be it for my diary, to cope with my thoughts or for
+                    the blog, even though it wasn't published yet.
+                    <br />
+                    <br />I started to genuinely enjoy writing. About my
+                    thoughts, my experiences, my struggles. It helps me cope
+                    when I'm not feeling particularly well. It is the sort of
+                    hobby where I can shut down into my own world and recharge
+                    my social battery.
+                    <br />
+                    <br />
+                    So this is what this is I guess. A place where I just write
+                    about stuff I feel or experience, whenever I feel the need
+                    to do so.
                 </p>
             </main>
         </>

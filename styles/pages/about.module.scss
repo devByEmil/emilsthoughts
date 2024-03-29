@@ -1,15 +1,16 @@
 @import "../variables.scss";
 
 .content {
-    height: 60vh;
     display: grid;
     align-content: center;
     justify-content: center;
-    padding: 20rem 35rem 25rem 35rem;
+    padding: 10rem 25rem 15rem 25rem;
+    min-height: 60vh;
 
     &__text {
         display: block;
         font-size: 2rem;
+        margin-top: 2rem;
     }
 }
 
